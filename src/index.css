@@ -1,0 +1,111 @@
+/* Global styles for the Observers app */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", "Roboto", "Helvetica", "Arial", sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Smooth scrolling for better UX */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+}
+
+/* Custom styles for resizable cards */
+.resizable-card {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Prevent text selection during resize */
+.resizing {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Smooth height transitions */
+.mui-card {
+  transition: height 0.1s ease-out;
+}
+
+/* Card resizing animation */
+.card-resizing {
+  animation: resizePulse 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes resizePulse {
+  0% {
+    box-shadow: 0 12px 40px rgba(102, 126, 234, 0.5);
+  }
+  100% {
+    box-shadow: 0 12px 40px rgba(102, 126, 234, 0.7);
+  }
+}
+
+/* Smooth resize handle transitions */
+.resize-handle {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Height display animation */
+.height-display {
+  transition: all 0.1s ease-out;
+}
+
+.height-display.resizing {
+  transform: scale(1.05);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Editable card title styles */
+.card-title {
+  transition: all 0.2s ease;
+}
+
+.card-title:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Input field styling */
+.card-title input {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.card-title input:focus {
+  border-bottom-color: rgba(255, 255, 255, 0.8) !important;
+  background-color: rgba(255, 255, 255, 0.05) !important;
+}
+  
